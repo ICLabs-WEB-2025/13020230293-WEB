@@ -57,10 +57,24 @@ class AdminController extends Controller
     }
 
     // !!! METHOD UNTUK MENAMPILKAN HALAMAN MANAJEMEN KOMENTAR !!!
-    public function comments()
+    public function comments(Request $request) // Tambahkan Request $request
     {
-        $comments = Comment::latest()->get();
-        return view('admin.comments.index', compact('comments'));
+        $sortOrder = $request->query('sort', 'latest'); // Default filter adalah 'latest'
+
+        $commentsQuery = Comment::query(); // Mulai query builder
+
+        if ($sortOrder === 'oldest') {
+            $commentsQuery->orderBy('created_at', 'asc'); // Urutkan dari yang terlama
+        } else { // Default atau jika sort=latest
+            $commentsQuery->orderBy('created_at', 'desc'); // Urutkan dari yang terbaru
+        }
+
+        $comments = $commentsQuery->get();
+        // Jika Anda ingin paginasi di masa depan:
+        // $comments = $commentsQuery->paginate(15)->appends($request->query());
+
+        // Kirim juga $sortOrder ke view untuk menandai pilihan filter yang aktif
+        return view('admin.comments.index', compact('comments', 'sortOrder'));
     }
 
     // Method untuk menampilkan detail komentar

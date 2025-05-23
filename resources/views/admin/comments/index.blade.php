@@ -11,15 +11,36 @@
             <a href="{{ route('admin.comments.export.pdf') }}" class="btn btn-danger btn-sm me-1" target="_blank">
                 <i class="fas fa-file-pdf me-1"></i> Ekspor ke PDF
             </a>
-            {{-- !!! TOMBOL EKSPOR SPREADSHEET (EXCEL) BARU !!! --}}
             <a href="{{ route('admin.comments.export.spreadsheet') }}" class="btn btn-success btn-sm" target="_blank">
                 <i class="fas fa-file-excel me-1"></i> Ekspor ke Excel
             </a>
         </div>
     </div>
 
-    {{-- ... (sisa kode view: @if(session('success')), card, table, dll.) ... --}}
-    {{-- Tabel komentar Anda yang sudah ada --}}
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    {{-- !!! FORM FILTER BARU !!! --}}
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <form action="{{ route('admin.comments.index') }}" method="GET" id="filterSortFormAdminComments">
+                <div class="input-group input-group-sm"> {{-- Ukuran form group dikecilkan --}}
+                    <label class="input-group-text" for="sortAdminComments">Urutkan:</label>
+                    <select class="form-select form-select-sm" name="sort" id="sortAdminComments" onchange="document.getElementById('filterSortFormAdminComments').submit();">
+                        {{-- Pastikan $sortOrder terdefinisi, jika tidak beri nilai default --}}
+                        <option value="latest" @if(isset($sortOrder) && $sortOrder == 'latest') selected @endif>Komentar Terbaru</option>
+                        <option value="oldest" @if(isset($sortOrder) && $sortOrder == 'oldest') selected @endif>Komentar Terlama</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        {{-- Anda bisa menambahkan filter lain di sini jika perlu, misal search box --}}
+    </div>
+
     <div class="card shadow-sm">
         <div class="card-body">
             <div class="table-responsive">
@@ -45,9 +66,6 @@
                             <td>{{ Str::limit($comment->komentar, 50) }}</td>
                             <td>{{ $comment->created_at->format('d M Y, H:i') }}</td>
                             <td>
-                                <a href="{{ route('admin.comments.show', $comment->id) }}" class="btn btn-sm btn-info" title="Detail">
-                                    <i class="fas fa-eye"></i>
-                                </a>
                                 <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus komentar ini?');">
                                     @csrf
                                     @method('DELETE')
@@ -67,5 +85,6 @@
             </div>
         </div>
     </div>
+
 </div>
 @endsection

@@ -757,7 +757,7 @@
                         <div class="feature-icon">
                             <i class="fas fa-bullhorn"></i>
                         </div>
-                        <h3 class="feature-title">Kampanye Aspirasi</h3>
+                        <h3 class="feature-title">Suarakan Suaramu</h3>
                         <p class="feature-text">Fitur untuk mengumpulkan dukungan dari siswa lain untuk ide-ide
                             perbaikan yang penting.</p>
                     </div>
@@ -800,15 +800,15 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Testimonial"
+                            <img src="{{ asset('images/rifqi.jpg') }}" alt="Testimonial"
                                 class="testimonial-img">
                             <div class="ms-3">
-                                <h5 class="testimonial-name">Ahmad Ridwan</h5>
-                                <p class="testimonial-position">Kelas 11 IPA</p>
+                                <h5 class="testimonial-name">Scania Maccopa</h5>
+                                <p class="testimonial-position">Kelas 12 IPA</p>
                             </div>
                         </div>
-                        <p class="testimonial-text">"Saya senang akhirnya ada platform di mana suara kami benar-benar
-                            didengar. Saran saya tentang perbaikan laboratorium komputer ditanggapi dengan sangat baik."
+                        <p class="testimonial-text">"Saya sudah riset. Saya kira masalahnya ada di kurikulumnya.
+                            Tapi setelah saya pikir-pikir lagi… ternyata masalah utamanya adalah… saya. Iya, saya yang bodoh 😭.
                         </p>
                     </div>
                 </div>
@@ -816,11 +816,11 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Testimonial"
+                            <img src="{{ asset('images/Farah Tsabitaputri Az Zahra.jpg') }}" alt="Testimonial"
                                 class="testimonial-img">
                             <div class="ms-3">
-                                <h5 class="testimonial-name">Siti Rahma</h5>
-                                <p class="testimonial-position">Kelas 12 IPS</p>
+                                <h5 class="testimonial-name">Farah Tsabitaputri Az Zahra</h5>
+                                <p class="testimonial-position">Kelas 12 IPA</p>
                             </div>
                         </div>
                         <p class="testimonial-text">"Platform ini membantu saya yang pemalu untuk berani menyampaikan
@@ -832,11 +832,11 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial"
+                            <img src="{{ asset('images/ichwal.jpg') }}" alt="Testimonial"
                                 class="testimonial-img">
                             <div class="ms-3">
-                                <h5 class="testimonial-name">Deni Kurniawan</h5>
-                                <p class="testimonial-position">Kelas 10 IPS</p>
+                                <h5 class="testimonial-name">Ichwalll</h5>
+                                <p class="testimonial-position">Kelas 12 TKJ</p>
                             </div>
                         </div>
                         <p class="testimonial-text">"Setelah saya dan teman-teman mengusulkan kegiatan ekskul baru
@@ -867,11 +867,11 @@
                         SMA ANGKASA
                     </h3>
                     <p class="footer-text">Platform digital untuk menyalurkan aspirasi siswa dan membangun komunikasi
-                        yang lebih baik antara siswa dan SMA Negeri Pangkajene Maros.</p>
+                        yang lebih baik antara siswa dan Sma Angkasa Lanud Sultan Hasanuddin, Maros</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/sma_angkasa/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
