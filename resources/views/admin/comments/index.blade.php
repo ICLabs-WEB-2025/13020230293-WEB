@@ -1,7 +1,6 @@
-{{-- File: resources/views/admin/comments/index.blade.php --}}
 @extends('layouts.admin')
 
-@section('title', 'Manajemen Komentar')
+@section('title', 'Management Data')
 
 @section('content')
 <div class="container-fluid pt-4">
@@ -24,7 +23,6 @@
         </div>
     @endif
 
-    {{-- !!! FORM FILTER BARU !!! --}}
     <div class="row mb-3">
         <div class="col-md-4">
             <form action="{{ route('admin.comments.index') }}" method="GET" id="filterSortFormAdminComments">
@@ -38,7 +36,6 @@
                 </div>
             </form>
         </div>
-        {{-- Anda bisa menambahkan filter lain di sini jika perlu, misal search box --}}
     </div>
 
     <div class="card shadow-sm">

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightButton = document.getElementById('lightTheme');
     const darkButton = document.getElementById('darkTheme');
 
-    // Toggle sidebar saat hamburger button diklik
+    // Toggle sidebar
     if (hamburgerButton) {
         hamburgerButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fungsi untuk mengatur tema
+    // Fungsi tema
     function setTheme(theme) {
         if (theme === 'dark') {
             document.body.classList.add('dark-theme');
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Check tema tersimpan di localStorage
+    // Check tema
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
 
-    // Responsive sidebar handling
+    // Responsive sidebar 
     function handleResize() {
         if (window.innerWidth < 992) {
             sidebar.classList.add('collapsed');

@@ -14,7 +14,7 @@ class UserController extends Controller
         if (Auth::user()->role === 'admin') {
 
         }
-        // Default fallback jika tidak ada view user.dashboard
+       
         return redirect()->route('landing')->with('info', 'Dashboard user belum tersedia.');
     }
 

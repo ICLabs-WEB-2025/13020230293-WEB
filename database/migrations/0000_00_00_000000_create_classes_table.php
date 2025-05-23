@@ -11,6 +11,6 @@ return new class extends Migration {
         });
     }
     public function down(): void {
-        Schema::dropIfExists('academic_classes'); // GANTI 'academic_classes' jika nama tabel Anda 'classes'
+        Schema::dropIfExists('academic_classes'); 
     }
 };

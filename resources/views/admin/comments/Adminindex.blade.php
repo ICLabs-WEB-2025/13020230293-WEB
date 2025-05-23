@@ -1,4 +1,3 @@
-{{-- Contoh sederhana untuk resources/views/admin/comments/index.blade.php --}}
 @extends('layouts.admin')
 
 @section('title', 'Manajemen Komentar')
@@ -39,7 +38,6 @@
                             <td>{{ $comment->created_at->format('d M Y, H:i') }}</td>
                             <td>
                                 <a href="{{ route('admin.comments.show', $comment->id) }}" class="btn btn-sm btn-info">Detail</a>
-                                {{-- Tambahkan tombol edit jika diperlukan --}}
                                 <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus komentar ini?');">
                                     @csrf
                                     @method('DELETE')

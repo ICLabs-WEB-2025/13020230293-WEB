@@ -1,14 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard Admin') {{-- Judul ini akan muncul di header utama --}}
-
+@section('title', 'Dashboard Admin')
 @section('styles')
 <style>
     .info-card {
         border-left: 5px solid var(--admin-primary-color);
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         border-radius: .5rem;
-        background-color: white; /* Pastikan kartu punya background putih */
+        background-color: white;
     }
     .info-card:hover {
         transform: translateY(-5px);
@@ -35,7 +34,6 @@
 @endsection
 
 @section('content')
-{{-- Hapus H1 "Dashboard Admin" dari sini, karena sudah ada di layout utama --}}
 
 {{-- Baris untuk Info Cards (Sekarang hanya 2 kartu) --}}
 <div class="row g-4 mb-4">
@@ -70,7 +68,7 @@
     </div>
 </div>
 
-{{-- Baris untuk Chart Utama dan Chart Performa Bulanan --}}
+{{-- Baris untuk Chart Utama --}}
 <div class="row g-4">
     {{-- Chart Aktivitas Komentar (Line Chart) --}}
     <div class="col-lg-7"> {{-- Chart ini mengambil porsi lebih besar --}}
@@ -106,7 +104,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Line Chart: Aktivitas Komentar 7 Hari Terakhir
         const lineCtx = document.getElementById('commentsLineChart')?.getContext('2d');
         if (lineCtx) {
             const lineChartLabels = @json($lineChartLabels);
@@ -132,13 +129,13 @@
             });
         }
 
-        // Horizontal Bar Chart: Performa Komentar Bulanan
+        // Horizontal Bar Chart
         const barCtx = document.getElementById('monthlyCommentsBarChart')?.getContext('2d');
         if (barCtx) {
             const barChartMonthlyLabels = @json($barChartMonthlyLabels);
             const barChartMonthlyData = @json($barChartMonthlyData);
             new Chart(barCtx, {
-                type: 'bar', // Akan menjadi horizontal jika indexAxis = 'y'
+                type: 'bar',
                 data: {
                     labels: barChartMonthlyLabels,
                     datasets: [{
@@ -150,11 +147,11 @@
                     }]
                 },
                 options: {
-                    indexAxis: 'y', // Ini membuat bar menjadi horizontal
+                    indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: { x: { beginAtZero: true, ticks: { precision: 0 } } },
-                    plugins: { legend: { display: false } } // Sembunyikan legend jika hanya 1 dataset
+                    plugins: { legend: { display: false } }
                 }
             });
         }

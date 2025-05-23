@@ -8,15 +8,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB; // <-- TAMBAHKAN INI
 use Illuminate\Support\Facades\Log;
 
-class AuthController extends Controller
-{
-    public function showLoginForm()
-    {
+class AuthController extends Controller{
+    public function showLoginForm(){
         return redirect()->route('landing');
     }
 
-    public function login(Request $request)
-    {
+    public function login(Request $request){
         $credentials = $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
@@ -29,16 +26,8 @@ class AuthController extends Controller
 
         $attemptResult = Auth::attempt($credentials, $remember); // Lakukan percobaan login
 
-        $queries = DB::getQueryLog(); // Ambil log query yang dijalankan
-        DB::disableQueryLog(); // Nonaktifkan lagi (opsional, tapi baik dilakukan)
-
-        // Tampilkan hasil percobaan, kredensial yang digunakan, dan query yang dijalankan
-        // dd($attemptResult, $credentials, $queries);
-        // --- SELESAI DEBUGGING QUERY ---
-
-
-        // Baris kode di bawah ini tidak akan tercapai karena ada dd() di atas,
-        // tapi biarkan saja dulu untuk sementara.
+        $queries = DB::getQueryLog();
+        DB::disableQueryLog();
         if ($attemptResult) {
             $request->session()->regenerate();
             $user = Auth::user();
@@ -61,8 +50,7 @@ class AuthController extends Controller
         return back()->withErrors(['email' => 'Email atau password salah.'])->onlyInput('email');
     }
 
-    public function logout(Request $request)
-    {
+    public function logout(Request $request){
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

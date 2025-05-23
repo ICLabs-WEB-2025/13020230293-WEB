@@ -15,7 +15,7 @@
         </div>
         <hr class="border-dark mb-4">
 
-        <!-- Baris untuk tombol Add dan Search -->
+        <!-- Baris  tombol Add & Search -->
 <div class="row action-row align-items-center mb-4">
     <div class="col-lg-4 col-md-5 col-sm-12 mb-3 mb-md-0">
         <button type="button" class="btn add-button d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#commentModal">
@@ -30,7 +30,6 @@
     </div>
 </div>
 
-        <!-- Daftar Komentar dengan List Layout -->
         <div class="comments-container">
             @foreach($comments as $comment)
                 <div class="comment-card" data-id="{{ $comment->id }}">
@@ -63,7 +62,6 @@
             @endforeach
         </div>
 
-        <!-- Include Modal Partials -->
         @include('partials.modals')
     </div>
 @endsection

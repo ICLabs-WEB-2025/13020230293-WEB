@@ -7,7 +7,7 @@
     <title>{{ $title ?? 'Laporan Komentar' }}</title>
     <style>
         body {
-            font-family: 'Helvetica', 'Arial', sans-serif; /* Font dasar untuk PDF */
+            font-family: 'Times New Roman', Times, serif;
             font-size: 10px;
             line-height: 1.4;
         }

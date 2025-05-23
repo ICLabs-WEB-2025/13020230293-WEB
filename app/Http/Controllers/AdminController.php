@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classes;
-use App\Models\Comment; // Pastikan ini ada
+use App\Models\Comment;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request; // Diperlukan untuk beberapa method
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\Facade\Pdf; // Untuk PDF
+use Barryvdh\DomPDF\Facade\Pdf;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class AdminController extends Controller
 {
-    public function dashboard()
-    {
-        // Data yang sudah ada
+    public function dashboard(){
         $totalComments = Comment::count();
         $totalUsers = User::where('role', 'user')->count();
         $newComments = Comment::whereDate('created_at', '>=', Carbon::now()->subDays(7))->count();
@@ -56,47 +54,33 @@ class AdminController extends Controller
         ));
     }
 
-    // !!! METHOD UNTUK MENAMPILKAN HALAMAN MANAJEMEN KOMENTAR !!!
-    public function comments(Request $request) // Tambahkan Request $request
-    {
-        $sortOrder = $request->query('sort', 'latest'); // Default filter adalah 'latest'
-
-        $commentsQuery = Comment::query(); // Mulai query builder
+    // METHOD UNTUK MENAMPILKAN HALAMAN MANAJEMEN KOMENTAR
+    public function comments(Request $request) {
+        $sortOrder = $request->query('sort', 'latest');
+        $commentsQuery = Comment::query();
 
         if ($sortOrder === 'oldest') {
-            $commentsQuery->orderBy('created_at', 'asc'); // Urutkan dari yang terlama
+            $commentsQuery->orderBy('created_at', 'asc');
         } else { // Default atau jika sort=latest
-            $commentsQuery->orderBy('created_at', 'desc'); // Urutkan dari yang terbaru
+            $commentsQuery->orderBy('created_at', 'desc');
         }
 
         $comments = $commentsQuery->get();
-        // Jika Anda ingin paginasi di masa depan:
-        // $comments = $commentsQuery->paginate(15)->appends($request->query());
 
-        // Kirim juga $sortOrder ke view untuk menandai pilihan filter yang aktif
         return view('admin.comments.index', compact('comments', 'sortOrder'));
     }
 
     // Method untuk menampilkan detail komentar
-    public function showComment(Comment $comment) // Menggunakan Route Model Binding
-    {
-        // Anda perlu membuat view: resources/views/admin/comments/show.blade.php
-        // Contoh sederhana: return view('admin.comments.show', compact('comment'));
-        // Untuk sekarang, kita bisa redirect atau tampilkan data sederhana jika view belum ada:
-        // return response("Detail untuk Komentar ID: " . $comment->id . "<br>Nama: " . $comment->nama . "<br>Komentar: " . $comment->komentar);
-         return view('admin.comments.show', compact('comment')); // Pastikan view ini ada
+    public function showComment(Comment $comment) {
+         return view('admin.comments.show', compact('comment'));
     }
 
-    // Method untuk menghapus komentar
-    public function destroyComment(Comment $comment) // Menggunakan Route Model Binding
-    {
+    public function destroyComment(Comment $comment) {
         $comment->delete();
         return redirect()->route('admin.comments.index')->with('success', 'Komentar berhasil dihapus!');
     }
 
-    // Method untuk update komentar (jika Anda memiliki form edit)
-    public function updateComment(Request $request, Comment $comment) // Menggunakan Route Model Binding
-    {
+    public function updateComment(Request $request, Comment $comment) {
         $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -104,37 +88,31 @@ class AdminController extends Controller
             'komentar' => 'required|string',
         ]);
         $comment->update($validatedData);
-        // Redirect ke halaman detail atau index, tergantung alur Anda
         return redirect()->route('admin.comments.index')->with('success', 'Komentar berhasil diperbarui!');
     }
 
     // Method untuk manajemen pengguna
-    public function users()
-    {
+    public function users(){
         $users = User::all();
-        // Anda perlu membuat view: resources/views/admin/users/index.blade.php
         return view('admin.users.index', compact('users'));
     }
 
-    public function showUser(User $user) // Menggunakan Route Model Binding
-    {
-        // Anda perlu membuat view: resources/views/admin/users/show.blade.php
+    public function showUser(User $user)  {
+
         return view('admin.users.show', compact('user'));
     }
 
-    public function updateUser(Request $request, User $user) // Menggunakan Route Model Binding
-    {
+    public function updateUser(Request $request, User $user) {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
-            'role' => 'required|in:admin,user', // Sesuaikan role jika ada lebih banyak
+            'role' => 'required|in:admin,user',
         ]);
         $user->update($validatedData);
         return redirect()->route('admin.users.index')->with('success', 'Pengguna berhasil diperbarui.');
     }
 
-    public function destroyUser(User $user) // Menggunakan Route Model Binding
-    {
+    public function destroyUser(User $user)  {
         $user->delete();
         return redirect()->route('admin.users.index')->with('success', 'Pengguna berhasil dihapus.');
     }
@@ -202,9 +180,8 @@ class AdminController extends Controller
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment;filename="' . $fileName . '"');
         header('Cache-Control: max-age=0');
-        // Pastikan tidak ada output lain sebelum header ini (misalnya echo, spasi, dll.)
 
-        $writer->save('php://output'); // Tulis file ke output PHP (langsung download)
-        exit; // Penting untuk menghentikan eksekusi script Laravel setelah file dikirim
+        $writer->save('php://output');
+        exit;
     }
 }

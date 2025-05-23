@@ -647,18 +647,20 @@
 
     <!-- Hero Section with Wave Animation -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="hero-title">Suarakan Pendapatmu, Bangun Sekolah Bersama</h1>
-                    <p class="hero-subtitle">Platform digital untuk berbagi aspirasi, ide, dan masukan demi kemajuan SMA
-                        Angkasa Maros dan pendidikan yang lebih baik.</p>
-                    <a href="{{ route('comments.index') }}" class="btn hero-btn">Berikan Suaramu Sekarang</a>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="{{ asset('images/Hand drawn school students indonesian national education day illustration _ Premium Vector 1.png') }}" alt="Logo">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="hero-title">Suarakan Pendapatmu, Bangun Sekolah Bersama</h1>
+                <p class="hero-subtitle">Platform digital untuk berbagi aspirasi, ide, dan masukan demi kemajuan SMA
+                    Angkasa Maros dan pendidikan yang lebih baik.</p>
+                <a href="{{ route('comments.index') }}" class="btn hero-btn">Berikan Suaramu Sekarang</a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                {{-- TAMBAHKAN CLASS img-fluid DI SINI --}}
+                <img src="{{ asset('images/Hand drawn school students indonesian national education day illustration _ Premium Vector 1.png') }}" alt="Ilustrasi Siswa Sekolah" class="img-fluid">
             </div>
         </div>
+    </div>
 
         <!-- Wave Animation -->
         <div class="hero-waves">
@@ -987,7 +989,6 @@
             }
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1011,7 +1012,6 @@
             });
         });
 
-        // Active link highlighting
         const sections = document.querySelectorAll('section[id]');
 
         function highlightNavLink() {

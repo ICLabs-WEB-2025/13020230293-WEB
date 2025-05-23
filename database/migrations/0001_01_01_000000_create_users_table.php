@@ -6,12 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    // database/migrations/xxxx_xx_xx_xxxxxx_create_users_table.php
-public function up(): void
-{
+
+public function up(): void{
     Schema::create('users', function (Blueprint $table) {
         $table->id();
         $table->string('name');
@@ -39,11 +35,8 @@ public function up(): void
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
+
+    public function down(): void{
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');

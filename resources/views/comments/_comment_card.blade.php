@@ -1,4 +1,3 @@
-{{-- File: resources/views/comments/_comment_card.blade.php --}}
 <div class="comment-card" data-id="{{ $comment->id }}">
     <div class="card-body">
         <div class="d-flex justify-content-between">
@@ -13,9 +12,6 @@
                 </div>
             </div>
             <div class="action-buttons">
-                {{-- Tombol Edit & Delete bisa dipertimbangkan untuk halaman ini --}}
-                {{-- Jika ingin ada, pastikan modalnya juga tersedia atau di-include --}}
-                {{-- Untuk saat ini, kita fokus pada tampilan daftar saja --}}
             </div>
         </div>
         <div class="card-text mt-3">{{ $comment->komentar }}</div>

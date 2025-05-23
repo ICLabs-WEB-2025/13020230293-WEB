@@ -1,4 +1,4 @@
-@extends('layouts.app') {{-- Sesuaikan jika layout utama Anda berbeda --}}
+@extends('layouts.app')
 
 @section('title', 'Daftar Semua Komentar')
 
@@ -9,13 +9,13 @@
             <button id="sidebarToggle" class="hamburger-btn me-3">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
-            <h1 class="suara-siswa-title">DAFTAR SEMUA KOMENTAR</h1> {{-- Judul bisa disesuaikan --}}
+            <h1 class="suara-siswa-title">DAFTAR KOMENTAR SISWA</h1>
         </div>
     </div>
     <hr class="border-dark mb-4">
 
     <div class="row mb-4">
-        <div class="col-md-6 col-lg-4"> {{-- Anda bisa sesuaikan lebar kolom --}}
+        <div class="col-md-6 col-lg-4">
             <form action="{{ route('comments.listAll') }}" method="GET" id="filterSortForm">
                 <div class="input-group">
                     <label class="input-group-text" for="sort">Urutkan Berdasarkan:</label>
@@ -26,7 +26,6 @@
                 </div>
             </form>
         </div>
-        {{-- Anda bisa menambahkan filter lain di sini, misalnya search box --}}
     </div>
 
     <div class="comments-container">
@@ -38,10 +37,5 @@
             </div>
         @endforelse
     </div>
-
-    {{-- Jika Anda menggunakan paginasi di controller, tampilkan linknya di sini --}}
-    {{-- <div class="mt-4 d-flex justify-content-center">
-        {{ $comments->appends(request()->query())->links() }}
-    </div> --}}
 </div>
 @endsection

@@ -12,15 +12,14 @@ class Log extends Model
 {
     use HasFactory;
     protected $fillable = [
-        // 'admin_id', // Hapus ini [cite: 68]
-        'user_id', // Pastikan ini ada
+        'user_id',
         'activity',
         'description',
-        'ip_address', // Jika masih dipakai, tambahkan ke migrasi juga
-        'user_agent'  // Jika masih dipakai, tambahkan ke migrasi juga
-    ]; // [cite: 68] (dimodifikasi)
+        'ip_address',
+        'user_agent'
+    ];
 
-    public function user() // Ubah dari admin() [cite: 69]
+    public function user() 
     {
         return $this->belongsTo(User::class, 'user_id'); // [cite: 69] (dimodifikasi)
     }

@@ -1,5 +1,3 @@
-{{-- File: resources/views/partials/modals.blade.php --}}
-<!-- Modal Add -->
 <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
@@ -36,7 +34,7 @@
     </div>
 </div>
 
-<!-- Modal Edit (Loop through comments) -->
+<!-- Modal Edit  -->
 @foreach($comments as $comment)
 <div class="modal fade" id="editModal{{ $comment->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $comment->id }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">

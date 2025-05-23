@@ -41,21 +41,12 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected function casts(): array // Jika Anda menggunakan Laravel 9+
+    protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed', // [cite: 88]
+            'password' => 'hashed', 
         ];
     }
 
-    // Untuk Laravel versi lama yang tidak menggunakan method casts():
-    // protected $casts = [
-    // 'email_verified_at' => 'datetime',
-    // ];
-    //
-    // public function setPasswordAttribute($value)
-    // {
-    // $this->attributes['password'] = Hash::make($value);
-    // }
 }

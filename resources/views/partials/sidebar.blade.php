@@ -1,4 +1,3 @@
-{{-- File: resources/views/partials/sidebar.blade.php --}}
 <div id="sidebar" class="sidebar">
     <div class="logo">
        <img src="{{ asset('images/logo sma angkasa.png') }}" alt="Logo">
@@ -34,7 +33,7 @@
         </div>
     </div>
 
-    <!-- Theme Toggle inside Sidebar -->
+    <!-- tema toggle inside Sidebar -->
     <div class="theme-toggle">
         <p>Tampilan</p>
         <div class="theme-switch-buttons">
