@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,7 +12,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -144,25 +146,29 @@
             margin-bottom: -7px;
         }
 
-        .parallax > use {
-            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        .parallax>use {
+            animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
         }
-        .parallax > use:nth-child(1) {
+
+        .parallax>use:nth-child(1) {
             animation-delay: -2s;
             animation-duration: 7s;
             fill: rgba(255, 255, 255, 0.7);
         }
-        .parallax > use:nth-child(2) {
+
+        .parallax>use:nth-child(2) {
             animation-delay: -3s;
             animation-duration: 10s;
             fill: rgba(255, 255, 255, 0.5);
         }
-        .parallax > use:nth-child(3) {
+
+        .parallax>use:nth-child(3) {
             animation-delay: -4s;
             animation-duration: 13s;
             fill: rgba(255, 255, 255, 0.3);
         }
-        .parallax > use:nth-child(4) {
+
+        .parallax>use:nth-child(4) {
             animation-delay: -5s;
             animation-duration: 20s;
             fill: rgba(255, 255, 255, 1);
@@ -170,10 +176,11 @@
 
         @keyframes move-forever {
             0% {
-                transform: translate3d(-90px,0,0);
+                transform: translate3d(-90px, 0, 0);
             }
+
             100% {
-                transform: translate3d(85px,0,0);
+                transform: translate3d(85px, 0, 0);
             }
         }
 
@@ -198,13 +205,15 @@
             border: none;
             color: white;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
         }
 
         .hero-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
-            background-color: #a39e97;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            background-color: rgb(212, 212, 212);
+            color: rgb(7, 5, 5);
+
         }
 
         .hero-img {
@@ -333,7 +342,7 @@
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?classroom');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(35, 132, 201, 0.7)), url('https://source.unsplash.com/random/1920x1080/?classroom');
             background-size: cover;
             background-position: center;
             color: white;
@@ -520,7 +529,8 @@
                 padding: 10px 0;
             }
 
-            .navbar-brand, .nav-link {
+            .navbar-brand,
+            .nav-link {
                 color: var(--dark-text) !important;
             }
 
@@ -594,15 +604,17 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://smangkasamaros.sch.id/wp-content/uploads/2023/12/Logo-SMAN-Pangkep.png" alt="Logo SMA" class="d-inline-block align-top">
-                Suara Siswa
+                <img src="{{ asset('images/logo sma angkasa.png') }}" alt="Logo" style="height: 50px; margin-right: 15px;"
+                    class="d-inline-block align-top"> SMA ANGKASA
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -623,7 +635,8 @@
                         <a class="nav-link" href="#contact">Kontak</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-light rounded-pill px-4 login-btn" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <a class="btn btn-light rounded-pill px-4 login-btn" href="#" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
                             <i class="fas fa-user me-1"></i> Login
                         </a>
                     </li>
@@ -638,20 +651,22 @@
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
                     <h1 class="hero-title">Suarakan Pendapatmu, Bangun Sekolah Bersama</h1>
-                    <p class="hero-subtitle">Platform digital untuk berbagi aspirasi, ide, dan masukan demi kemajuan SMA Angkasa Maros dan pendidikan yang lebih baik.</p>
+                    <p class="hero-subtitle">Platform digital untuk berbagi aspirasi, ide, dan masukan demi kemajuan SMA
+                        Angkasa Maros dan pendidikan yang lebih baik.</p>
                     <a href="{{ route('comments.index') }}" class="btn hero-btn">Berikan Suaramu Sekarang</a>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="http://smangkasamaros.sch.id/wp-content/uploads/2023/12/13C7EBE5-48A1-4D85-B47A-5B82242E2D03-1024x768.jpeg" alt="Foto SMA Angkasa Maros" class="hero-img rounded-3 shadow-lg">
-                </div>
+                    <img src="{{ asset('images/Hand drawn school students indonesian national education day illustration _ Premium Vector 1.png') }}" alt="Logo">
             </div>
         </div>
 
         <!-- Wave Animation -->
         <div class="hero-waves">
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
-                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 </defs>
                 <g class="parallax">
                     <use xlink:href="#gentle-wave" x="48" y="0" />
@@ -710,7 +725,8 @@
                             <i class="fas fa-comment-dots"></i>
                         </div>
                         <h3 class="feature-title">Komentar Real-time</h3>
-                        <p class="feature-text">Sampaikan pendapat, saran, dan kritik yang langsung dapat dilihat dan ditanggapi.</p>
+                        <p class="feature-text">Sampaikan pendapat, saran, dan kritik yang langsung dapat dilihat dan
+                            ditanggapi.</p>
                     </div>
                 </div>
 
@@ -720,7 +736,8 @@
                             <i class="fas fa-user-shield"></i>
                         </div>
                         <h3 class="feature-title">Privasi Terjamin</h3>
-                        <p class="feature-text">Dengan sistem yang aman, identitas siswa tetap terlindungi saat memberikan masukan sensitif.</p>
+                        <p class="feature-text">Dengan sistem yang aman, identitas siswa tetap terlindungi saat
+                            memberikan masukan sensitif.</p>
                     </div>
                 </div>
 
@@ -730,7 +747,8 @@
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3 class="feature-title">Analisis Respons</h3>
-                        <p class="feature-text">Sistem analisis canggih untuk mengelompokkan dan memprioritaskan masukan siswa.</p>
+                        <p class="feature-text">Sistem analisis canggih untuk mengelompokkan dan memprioritaskan
+                            masukan siswa.</p>
                     </div>
                 </div>
 
@@ -740,7 +758,8 @@
                             <i class="fas fa-bullhorn"></i>
                         </div>
                         <h3 class="feature-title">Kampanye Aspirasi</h3>
-                        <p class="feature-text">Fitur untuk mengumpulkan dukungan dari siswa lain untuk ide-ide perbaikan yang penting.</p>
+                        <p class="feature-text">Fitur untuk mengumpulkan dukungan dari siswa lain untuk ide-ide
+                            perbaikan yang penting.</p>
                     </div>
                 </div>
 
@@ -750,7 +769,8 @@
                             <i class="fas fa-file-alt"></i>
                         </div>
                         <h3 class="feature-title">Laporan Kemajuan</h3>
-                        <p class="feature-text">Lihat status dari saran yang telah disampaikan dan tindak lanjut dari pihak sekolah.</p>
+                        <p class="feature-text">Lihat status dari saran yang telah disampaikan dan tindak lanjut dari
+                            pihak sekolah.</p>
                     </div>
                 </div>
 
@@ -760,7 +780,8 @@
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h3 class="feature-title">Akses Multiperangkat</h3>
-                        <p class="feature-text">Akses Suara Siswa dari berbagai perangkat dengan tampilan yang responsif dan optimal.</p>
+                        <p class="feature-text">Akses Suara Siswa dari berbagai perangkat dengan tampilan yang
+                            responsif dan optimal.</p>
                     </div>
                 </div>
             </div>
@@ -779,39 +800,47 @@
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Testimonial" class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Testimonial"
+                                class="testimonial-img">
                             <div class="ms-3">
                                 <h5 class="testimonial-name">Ahmad Ridwan</h5>
                                 <p class="testimonial-position">Kelas 11 IPA</p>
                             </div>
                         </div>
-                        <p class="testimonial-text">"Saya senang akhirnya ada platform di mana suara kami benar-benar didengar. Saran saya tentang perbaikan laboratorium komputer ditanggapi dengan sangat baik."</p>
+                        <p class="testimonial-text">"Saya senang akhirnya ada platform di mana suara kami benar-benar
+                            didengar. Saran saya tentang perbaikan laboratorium komputer ditanggapi dengan sangat baik."
+                        </p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Testimonial" class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Testimonial"
+                                class="testimonial-img">
                             <div class="ms-3">
                                 <h5 class="testimonial-name">Siti Rahma</h5>
                                 <p class="testimonial-position">Kelas 12 IPS</p>
                             </div>
                         </div>
-                        <p class="testimonial-text">"Platform ini membantu saya yang pemalu untuk berani menyampaikan ide. Saya bisa memberikan masukan tanpa harus berbicara di depan umum. Terima kasih Suara Siswa!"</p>
+                        <p class="testimonial-text">"Platform ini membantu saya yang pemalu untuk berani menyampaikan
+                            ide. Saya bisa memberikan masukan tanpa harus berbicara di depan umum. Terima kasih Suara
+                            Siswa!"</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="testimonial-card">
                         <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial" class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial"
+                                class="testimonial-img">
                             <div class="ms-3">
                                 <h5 class="testimonial-name">Deni Kurniawan</h5>
-                                <p class="testimonial-position">Kelas 10 Multimedia</p>
+                                <p class="testimonial-position">Kelas 10 IPS</p>
                             </div>
                         </div>
-                        <p class="testimonial-text">"Setelah saya dan teman-teman mengusulkan kegiatan ekskul baru melalui Suara Siswa, dalam waktu sebulan ekskul tersebut sudah terbentuk. Keren banget responsnya!"</p>
+                        <p class="testimonial-text">"Setelah saya dan teman-teman mengusulkan kegiatan ekskul baru
+                            melalui Suara Siswa, dalam waktu sebulan ekskul tersebut sudah terbentuk. </p>
                     </div>
                 </div>
             </div>
@@ -822,7 +851,8 @@
     <section class="cta-section">
         <div class="container" data-aos="fade-up">
             <h2 class="cta-title">Jadilah Bagian dari Perubahan</h2>
-            <p class="cta-text">Bergabunglah dengan ribuan siswa lainnya yang telah memberikan suara mereka untuk menciptakan lingkungan sekolah yang lebih baik. Setiap pendapat penting, termasuk pendapatmu!</p>
+            <p class="cta-text">Bergabunglah dengan ribuan siswa lainnya yang telah memberikan suara mereka untuk
+                menciptakan lingkungan sekolah yang lebih baik. Setiap pendapat penting, termasuk pendapatmu!</p>
             <a href="{{ route('comments.index') }}" class="btn hero-btn">Mulai Bersuara Sekarang</a>
         </div>
     </section>
@@ -833,10 +863,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-5">
                     <h3 class="footer-logo">
-                        <img src="https://smangkasamaros.sch.id/wp-content/uploads/2023/12/Logo-SMAN-Pangkep.png" alt="Logo SMA" style="height: 50px; margin-right: 15px;">
-                        Suara Siswa
+                        <img src="{{ asset('images/logo sma angkasa.png') }}" alt="Logo" style="height: 50px; margin-right: 15px;">
+                        SMA ANGKASA
                     </h3>
-                    <p class="footer-text">Platform digital untuk menyalurkan aspirasi siswa dan membangun komunikasi yang lebih baik antara siswa dan SMA Negeri Pangkajene Maros.</p>
+                    <p class="footer-text">Platform digital untuk menyalurkan aspirasi siswa dan membangun komunikasi
+                        yang lebih baik antara siswa dan SMA Negeri Pangkajene Maros.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -870,7 +901,8 @@
                 <div class="col-lg-3 col-md-6 mb-5 footer-links">
                     <h5>Kontak</h5>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Lanud Sultan, Jl. Dakota, Hasanuddin, Kec. Mandai, Kabupaten Maros, Sulawesi Selatan</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Lanud Sultan, Jl. Dakota, Hasanuddin, Kec.
+                            Mandai, Kabupaten Maros, Sulawesi Selatan</li>
                         <li><i class="fas fa-phone me-2"></i> (0410) xxxxxxxx</li>
                         <li><i class="fas fa-envelope me-2"></i> info@smangkasamaros.sch.id</li>
                         <li><i class="fas fa-clock me-2"></i> Senin - Jumat: 07:00 - 15:00</li>
@@ -893,24 +925,44 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    {{-- Perlu diubah pada resources/views/landingpage.blade.php --}}
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Masukkan username">
+                            <label for="email" class="form-label">Email</label>
+                            {{-- Tambahkan value="{{ old('email') }}" --}}
+                            <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                id="email" name="email" placeholder="Masukkan email" required
+                                value="{{ old('email') }}">
+                            {{-- Tampilkan pesan error untuk email --}}
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Masukkan password">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                id="password" name="password" placeholder="Masukkan password" required>
+                            {{-- Tampilkan pesan error untuk password (jarang, karena error biasanya dikaitkan ke field email oleh AuthController) --}}
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe"
+                                {{ old('rememberMe') ? 'checked' : '' }}>
                             <label class="form-check-label" for="rememberMe">Ingat saya</label>
-                            <a href="#" class="float-end forgot-link">Lupa password?</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary btn-submit">Login</button>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-submit">Login</button>
                 </div>
             </div>
         </div>
@@ -937,7 +989,7 @@
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
 
                 const targetId = this.getAttribute('href');
@@ -981,4 +1033,5 @@
         window.addEventListener('scroll', highlightNavLink);
     </script>
 </body>
+
 </html>

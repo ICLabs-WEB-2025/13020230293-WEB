@@ -11,15 +11,12 @@ class CommentController extends Controller
     /**
      * Display a listing of comments
      */
-    public function index()
+   public function index()
     {
         $comments = Comment::latest()->get();
         return view('comments.index', compact('comments'));
     }
 
-    /**
-     * Store a newly created comment
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -73,5 +70,24 @@ class CommentController extends Controller
 
         return redirect()->route('comments.index')
             ->with('success', 'Komentar berhasil dihapus!');
+    }
+
+    public function listAll(Request $request)
+    {
+        $sortOrder = $request->query('sort', 'latest'); // Default filter adalah 'latest'
+        $commentsQuery = Comment::query();
+
+        if ($sortOrder === 'oldest') {
+            $commentsQuery->orderBy('created_at', 'asc'); // Urutkan dari yang terlama
+        } else { // Default atau jika sort=latest
+            $commentsQuery->orderBy('created_at', 'desc'); // Urutkan dari yang terbaru
+        }
+
+        $comments = $commentsQuery->get();
+        // Jika Anda ingin menggunakan paginasi (halaman bernomor jika data banyak):
+        // $comments = $commentsQuery->paginate(10); // Misalnya 10 komentar per halaman
+
+        return view('comments.list', compact('comments', 'sortOrder'));
+        // Kita akan membuat view 'comments.list.blade.php' pada langkah berikutnya
     }
 }

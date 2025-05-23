@@ -11,7 +11,7 @@
     <div class="section-title">MAIN</div>
     <div class="menu-item">
         <a href="{{ route('landing') }}">
-            <i class="fas fa-home"></i> Dashboard
+            <i class="fas fa-home"></i> Home
         </a>
     </div>
 
@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="menu-item">
-                <a href="#">
+                <a href="{{ route('comments.listAll') }}" class="{{ request()->routeIs('comments.listAll') ? 'active' : '' }}">
                     <i class="fas fa-comments"></i> Daftar Comment
                 </a>
             </div>
