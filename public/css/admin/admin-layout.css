@@ -1,5 +1,4 @@
 :root {
-
     --ss-primary-color: #5887B2;
     --ss-primary-dark: #2c5277;
     --ss-primary-light: #7ba7d0;
@@ -8,7 +7,6 @@
     --ss-card-light: #fff;
     --ss-text-light: #333;
     --ss-border-light: #dee2e6;
-
     --ss-bg-dark: #121212;
     --ss-card-dark: #2a2a2a;
     --ss-text-dark: #e0e0e0;
@@ -18,7 +16,6 @@
     --admin-sidebar-bg: var(--ss-primary-color);
     --admin-sidebar-text: white;
     --admin-sidebar-link-hover-bg: rgba(255, 255, 255, 0.15);
-
     --admin-content-bg: var(--ss-bg-light);
     --admin-main-header-bg: var(--ss-card-light);
     --admin-main-header-text: var(--ss-text-light);
@@ -75,7 +72,7 @@ body {
 }
 
 .sidebar.collapsed {
-    margin-left: -260px; /
+    margin-left: -260px;
 }
 
 .sidebar .admin-info {
@@ -231,11 +228,11 @@ body {
 
 .actual-content {
     padding: 1.5rem;
-    color: var(--admin-card-text); /
+    color: var(--admin-card-text);
 }
 
 body.dark-theme-admin .actual-content {
-    color: var(--admin-card-text); /
+    color: var(--admin-card-text);
 }
 
 .card {
@@ -274,34 +271,88 @@ body.dark-theme-admin .actual-content {
     transition: color 0.3s ease;
 }
 
+
 .table {
-    color: var(--admin-table-text) !important;
     transition: color 0.3s ease;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    table-layout: auto;
 }
 
-.table th,
 .table td {
-    border-color: var(--admin-card-border) !important;
-    transition: border-color 0.3s ease;
-}
-
-.table > :not(caption) > * > * {
     background-color: var(--admin-card-bg);
     color: var(--admin-table-text);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid var(--admin-card-border) !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal !important;
+    vertical-align: top;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
 }
 
-.table-hover > tbody > tr:hover > * {
-    background-color: color-mix(in srgb, var(--admin-card-bg) 90%, #808080);
-    color: var(--admin-table-text);
+.table th {
+    border: 1px solid var(--admin-card-border) !important;
+    white-space: nowrap !important;
+    vertical-align: middle;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
 }
+
 
 thead.table-light th {
     background-color: var(--admin-table-header-bg) !important;
     color: var(--admin-card-text) !important;
-    border-color: var(--admin-card-border) !important;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+.table-hover > tbody > tr:hover > td {
+    background-color: color-mix(in srgb, var(--admin-card-bg) 90%, #808080);
+    color: var(--admin-table-text);
+}
+
+
+
+thead.table-light th:nth-child(1),
+.table td:nth-child(1) {
+    min-width: 50px;
+    text-align: center;
+}
+
+thead.table-light th:nth-child(2),
+.table td:nth-child(2) {
+    min-width: 150px;
+}
+
+thead.table-light th:nth-child(3),
+.table td:nth-child(3) {
+    min-width: 180px;
+}
+
+thead.table-light th:nth-child(4),
+.table td:nth-child(4) {
+    min-width: 70px;
+    text-align: center;
+}
+
+thead.table-light th:nth-child(5),
+.table td:nth-child(5) {
+    min-width: 200px;
+}
+
+thead.table-light th:nth-child(6),
+.table td:nth-child(6) {
+    min-width: 140px;
+}
+
+thead.table-light th:nth-child(7),
+.table td:nth-child(7) {
+    min-width: 120px;
+    text-align: center;
+}
+
+
 
 .list-group-item {
     background-color: var(--admin-card-bg) !important;
@@ -459,7 +510,6 @@ body.dark-theme-admin .actual-content a:not(.btn):hover {
         font-size: 0.75rem;
     }
     .comment-card .action-buttons {
-
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -474,5 +524,20 @@ body.dark-theme-admin .actual-content a:not(.btn):hover {
     }
     .table th, .table td {
         padding: 0.5rem 0.4rem;
+    }
+
+
+
+    thead.table-light th:nth-child(2), .table td:nth-child(2) {
+        min-width: 120px;
+    }
+    thead.table-light th:nth-child(3), .table td:nth-child(3) {
+        min-width: 150px;
+    }
+    thead.table-light th:nth-child(5), .table td:nth-child(5) {
+        min-width: 150px;
+    }
+    thead.table-light th:nth-child(7), .table td:nth-child(7) {
+        min-width: 100px;
     }
 }
